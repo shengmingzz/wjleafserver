@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var ws = new WebSocket('ws://127.0.0.1:3653')
+
+        ws.onopen = function() {
+            // 发送 Hello 消息
+            ws.send(JSON.stringify({Hello: {
+                Name: 'leaf wj'
+            }}))
+        }
+        ws.onmessage = function (e) {
+            var myReader = new FileReader();
+            myReader.onload = function(event){
+                console.log(JSON.stringify(myReader.result));
+            };
+            myReader.readAsText(e.data);
+
+//            var data = JSON.parse(decoder.decode(e.data));
+//            console.log("message received", data);
+        }
+
+        function sendMessage() {
+            var sendmsg = document.getElementById("msg").value
+            ws.send(JSON.stringify({Hello: {
+                Name: sendmsg
+            }}))
+        }
+
+    </script>
+</head>
+<body>
+<div>展示信息</div>
+<div>发送消息: <input type="text" name="fname" id="msg"/></div>
+<input type="button" value="发送" onclick="sendMessage()"/>
+<div></div>
+</body>
+</html>
