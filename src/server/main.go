@@ -7,6 +7,7 @@ import (
 	"wjleafserver/src/server/game"
 	"wjleafserver/src/server/gate"
 	"wjleafserver/src/server/login"
+	"wjleafserver/src/server/dbcenter"
 )
 
 func main() {
@@ -20,5 +21,6 @@ func main() {
 		game.Module,
 		gate.Module,
 		login.Module,
+		dbcenter.Module,
 	)
 }

@@ -43,3 +43,12 @@ func (u *User)FindByUserName(userName string) (*User,error) {
 	}
 	return &user,nil
 }
+
+func (u *User)FindById(userid uint) (*User,error) {
+	var user User
+	result := MysqlConn.Where("id = ?", userid).First(&user)
+	if result.Error != nil {
+		return nil,result.Error
+	}
+	return &user,nil
+}
