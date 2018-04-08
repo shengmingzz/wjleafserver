@@ -155,3 +155,15 @@ type UserInfo struct {
 	Nickname  string
 	Type      int
 }
+
+type RoomBaseInfo struct {
+
+}
+
+//game init msg
+type GameConf struct {
+	ID            int
+	Name          string
+	PeopleNumbers int
+	GameNumbers   int
+}

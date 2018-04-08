@@ -5,6 +5,7 @@ import (
 	"wjleafserver/src/server/msg"
 	"github.com/name5566/leaf/gate"
 	_ "github.com/name5566/leaf/log"
+	"wjleafserver/src/server/base/funciton"
 )
 
 func init()  {
@@ -38,7 +39,14 @@ func onLogin(args []interface{}) {
 
 	u, ok := g_user_mgr.Login(user_id, a)
 	if ok {
+		nmsg.Code = msg.MSG_CLIENT_USERINFO_RSP
 
+		nmsg.Msg = g_user_mgr.GetUserBaseInfo(u)
+		funciton.SendMsg(a, &nmsg)
+
+		if u.RoomID > 0 { // 处理房间信息
+
+		}
 	} else {
 		// 没有获取用户信息
 	}
