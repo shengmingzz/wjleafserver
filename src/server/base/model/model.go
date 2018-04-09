@@ -2,6 +2,8 @@ package model
 import (
 	"github.com/jinzhu/gorm"
 	"fmt"
+	_ "github.com/go-sql-driver/mysql"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 var (
 	MysqlConn    *gorm.DB
@@ -18,11 +20,11 @@ type Mysql struct {
 
 func init()  {
 	var mysql = Mysql{
-		"name": "wjecho",
-		"user": "root",
-		"host": "localhost",
-		"port": "3306",
-		"password": "159874"}
+		Name: "wjecho",
+		User: "root",
+		Host: "localhost",
+		Port: "3306",
+		Password: "159874"}
 
 	setupMysqlConn(&mysql)
 }

@@ -45,7 +45,7 @@ func (mgr *UserMgr)Login(user_id uint, a gate.Agent) (*model.User, bool) {
 		var err error
 		new_user := new(model.User)
 		new_user, err = new_user.FindById(user_id)
-		if err {
+		if err != nil {
 			return new_user, false
 		}
 		new_user.IsOnline = 1

@@ -68,5 +68,6 @@ func (rmg *RoomMgr)Create(u *model.User, game_conf msg.GameConf) (*Room, int) {
 	room.ZhuangIndex = 0
 
 	room.SetReady(u)
-	var gam
+
+	return  nil, 0
 }

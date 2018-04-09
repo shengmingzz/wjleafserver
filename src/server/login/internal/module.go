@@ -3,7 +3,6 @@ package internal
 import (
 	"github.com/name5566/leaf/module"
 	"wjleafserver/src/server/base"
-	"golang.org/x/crypto/ssh/agent"
 	"github.com/name5566/leaf/gate"
 )
 

@@ -33,7 +33,7 @@ func handleLogin(args []interface{}) {
 
 	log.Debug("repeat handleLogin %v/%v@%v", m.Name, m.Password, a.RemoteAddr().String())
 
-	user := model.User{}
+	user := &model.User{}
 	var err error
 	user, err = user.FindByUserName(m.Name)
 	if err != nil {

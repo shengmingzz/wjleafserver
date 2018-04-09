@@ -80,15 +80,15 @@ func (r *Room) Clear() {
 
 // 同意解散
 func (r *Room) AgreeDissolve(u *model.User) bool {
-
+	return true
 }
 
 // 获取座位
 func (r *Room) GetSeatByUID(uid uint) *Seat {
-
+	return nil
 }
 
 // 获取房间信息
 func (r *Room) GetRoomBaseInfo() *msg.RoomBaseInfo {
-
+	return nil
 }
